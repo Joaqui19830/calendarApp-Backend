@@ -2,15 +2,12 @@
     Rutas de Usuarios / Auth
     host + api/auth
 */
-
-
 const { Router } = require('express');
-// const router = express.Router
 const { check } = require('express-validator');
-const router = Router();
 const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/auth');
 const { validarCampos } = require('../middlewares/validar-campos');
 const { validarJWT } = require('../middlewares/validar-jwt');
+const router = Router();
 
 router.post(
     '/new',
